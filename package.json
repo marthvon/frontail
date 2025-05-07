@@ -1,6 +1,6 @@
 {
   "name": "@marthvon/frontail",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Tailwind Extension",
   "private": false,
   "author": "marthvon <mamertvonn@gmail.com>",
@@ -12,7 +12,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": [ "base/", "utilities/" ],
+  "files": [ "base/", "utilities/", "./plugin.js" ],
   "exports": { "plugin": { "import": "./plugin.js" } },
   "main": "./plugin.js",
   "type": "commonjs",
