@@ -1,0 +1,63 @@
+@layer utilities {
+  .animate-draw {
+    stroke-dasharray: 450;
+    stroke-dashoffset: 450;
+    animation: draw; 
+    animation-fill-mode: forwards;
+  }
+  .animate-from-left { 
+    animation: from-left;
+    animation-fill-mode: both; 
+  }
+  .animate-from-right { 
+    animation: from-right;
+    animation-fill-mode: both; 
+  }
+  .animate-from-top { 
+    animation: from-top;
+    animation-fill-mode: both; 
+  }
+  .animate-from-bottom { 
+    animation: from-bottom;
+    animation-fill-mode: both; 
+  }
+  .animate-scale { 
+    animation: from-scale;
+    animation-fill-mode: both; 
+  }
+  .animate-appear { 
+    animation: appear;
+    animation-fill-mode: both; 
+  }
+  .animate-fadeout { 
+    animation: fadeout;
+    animation-fill-mode: both;
+  }
+  .animate-fadein { 
+    animation: fadein;
+    animation-fill-mode: both;
+  }
+  .animate-arise {
+    animation: arise;
+    animation-fill-mode: backwards;
+    max-height: none;
+    overflow: hidden;
+    display: flex;
+  }
+  .animate-slide {
+    animation: slide;
+    animation-fill-mode: backwards;
+    max-width: none;
+    overflow: hidden;
+    display: flex;
+  }
+  .animate-keep-last { animation-fill-mode: forwards; }
+  .animate-keep-first { animation-fill-mode: backwards; }
+  .animate-keep-both { animation-fill-mode: both; }
+  /* Experimental */
+  .scroll-appear { --scroll-animation-name: appear; }
+  .scroll-from-bottom { --scroll-animation-name: from-bottom; }
+  .scroll-from-top { --scroll-animation-name: from-top; }
+  .scroll-from-right { --scroll-animation-name: from-right; }
+  .scroll-from-left { --scroll-animation-name: from-left; }
+}

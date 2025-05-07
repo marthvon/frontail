@@ -1,0 +1,24 @@
+{
+  "name": "@marthvon/frontail",
+  "version": "0.0.1",
+  "description": "Tailwind Extension",
+  "private": false,
+  "author": "marthvon",
+  "license": "MIT",
+  "repository": {
+    "type": "git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "Tailwind",
+    "CSS",
+    "UI",
+    "Utility",
+    "Dashboard",
+    "Layout",
+    "Components",
+    "Application"
+  ]
+}

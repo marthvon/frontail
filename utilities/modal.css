@@ -1,0 +1,37 @@
+.peer.input-modal {
+  display: none;
+  position: absolute;
+}
+
+@layer utilities {
+  .modal-background {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    cursor: pointer;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+  }
+  .bg-clear { background-size: 0% 0%; }
+  .bg-x-down { background-size: 0% 100%; }
+  .bg-y-down { background-size: 100% 0%; }
+  .bg-x-1\/2 { background-size: 50% 100%; }
+  .bg-y-1\/2 { background-size: 100% 50%; }
+  .bg-x-3\/4 { background-size: 75% 100%; }
+  .bg-y-3\/4 { background-size: 100% 75%; }
+  .bg-full { background-size: 100% 100%; }
+  
+  .bg-position {
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+  }
+  .-bg-position-x {
+    background-position: 200% 100%;
+    background-repeat: no-repeat;
+  }
+  .-bg-position-y {
+    background-position: 0% 200%;
+    background-repeat: no-repeat;
+  }
+}
