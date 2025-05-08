@@ -33,4 +33,14 @@
     background-position: 0% 200%;
     background-repeat: no-repeat;
   }
+  .visible-modal {
+    opacity: 1.0; 
+    max-height: fit-content; 
+    max-width: fit-content;
+  }
+  .hidden-modal {
+    opacity: 0.0; 
+    max-height: 0vh; 
+    max-width: 0vw;
+  }
 }

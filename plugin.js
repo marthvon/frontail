@@ -24,14 +24,46 @@ module.exports = {
     };
     addUtilities([...createUtilities('thumb'), ...createUtilities('track')]);
   },
-  AnimationDuration: function({ addUtilities, theme }) {
-    const transitionDurations = theme('transitionDuration');
-    addUtilities(Object.entries(transitionDurations).reduce( (acc, [key, value]) => {
-      acc[`.animation-duration-${key}`] = {
-        'animation-duration': value 
-      };
-      return acc;
-    }, {}));
+  AnimationDuration: function({ matchUtilities, theme }) {
+    matchUtilities({
+      'animation-duration': value => ({
+        '--tw-animation-duration': value+'ms',
+        'animation-duration': value+'ms'
+      })
+    }, {
+      values: Object.fromEntries(Object.entries(theme('transitionDuration'))
+        .map(([key, value]) => [ key, Number(value.replace('ms', '')) ])),
+      type: 'number'
+    });
+  },
+  AnimationDelay: function({ matchUtilities, theme }) {
+    matchUtilities({
+      'animation-delay': value => ({
+        '--tw-animation-delay': value+'ms',
+        'animation-delay': value+'ms'
+      })
+    }, {
+      values: Object.fromEntries(Object.entries(theme('transitionDuration'))
+        .map(([key, value]) => [ key, Number(value.replace('ms', '')) ])),
+      type: 'number'
+    });
+  },
+  AnimationIteration: function({ addUtilities, matchUtilities }) {
+    addUtilities({
+      '.animation-iteration-infinite': {
+        '--tw-animation-iteration': 'infinite',
+        'animation-iteration-count': 'infinite'
+      }
+    })
+    matchUtilities({
+      'animation-iteration': value => ({
+        '--tw-animation-iteration': value,
+        'animation-iteration-count': value
+      }),
+    }, {
+      values: Object.fromEntries(Array.from({ length: 13 }, (_, i) => [i.toString(), i])),
+      type: 'number'
+    });
   },
   extraScreens: {
     '2xs': '22.5rem',

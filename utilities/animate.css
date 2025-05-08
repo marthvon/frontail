@@ -2,43 +2,73 @@
   .animate-draw {
     stroke-dasharray: 450;
     stroke-dashoffset: 450;
-    animation: draw; 
+    animation: draw;
+    animation-duration: var(--tw-animation-duration, 1s);
+    animation-delay: var(--tw-animation-delay, 0ms);
+    animation-iteration-count: var(--tw-animation-iteration, 1);
     animation-fill-mode: forwards;
   }
   .animate-from-left { 
     animation: from-left;
+    animation-duration: var(--tw-animation-duration, 1s);
+    animation-delay: var(--tw-animation-delay, 0ms);
+    animation-iteration-count: var(--tw-animation-iteration, 1);
     animation-fill-mode: both; 
   }
   .animate-from-right { 
     animation: from-right;
+    animation-duration: var(--tw-animation-duration, 1s);
+    animation-delay: var(--tw-animation-delay, 0ms);
+    animation-iteration-count: var(--tw-animation-iteration, 1);
     animation-fill-mode: both; 
   }
   .animate-from-top { 
     animation: from-top;
+    animation-duration: var(--tw-animation-duration, 1s);
+    animation-delay: var(--tw-animation-delay, 0ms);
+    animation-iteration-count: var(--tw-animation-iteration, 1);
     animation-fill-mode: both; 
   }
   .animate-from-bottom { 
     animation: from-bottom;
+    animation-duration: var(--tw-animation-duration, 1s);
+    animation-delay: var(--tw-animation-delay, 0ms);
+    animation-iteration-count: var(--tw-animation-iteration, 1);
     animation-fill-mode: both; 
   }
   .animate-scale { 
     animation: from-scale;
+    animation-duration: var(--tw-animation-duration, 1s);
+    animation-delay: var(--tw-animation-delay, 0ms);
+    animation-iteration-count: var(--tw-animation-iteration, 1);
     animation-fill-mode: both; 
   }
   .animate-appear { 
     animation: appear;
+    animation-duration: var(--tw-animation-duration, 1s);
+    animation-delay: var(--tw-animation-delay, 0ms);
+    animation-iteration-count: var(--tw-animation-iteration, 1);
     animation-fill-mode: both; 
   }
   .animate-fadeout { 
     animation: fadeout;
+    animation-duration: var(--tw-animation-duration, 1s);
+    animation-delay: var(--tw-animation-delay, 0ms);
+    animation-iteration-count: var(--tw-animation-iteration, 1);
     animation-fill-mode: both;
   }
   .animate-fadein { 
     animation: fadein;
+    animation-duration: var(--tw-animation-duration, 1s);
+    animation-delay: var(--tw-animation-delay, 0ms);
+    animation-iteration-count: var(--tw-animation-iteration, 1);
     animation-fill-mode: both;
   }
   .animate-arise {
     animation: arise;
+    animation-duration: var(--tw-animation-duration, 1s);
+    animation-delay: var(--tw-animation-delay, 0ms);
+    animation-iteration-count: var(--tw-animation-iteration, 1);
     animation-fill-mode: backwards;
     max-height: none;
     overflow: hidden;
@@ -46,6 +76,9 @@
   }
   .animate-slide {
     animation: slide;
+    animation-duration: var(--tw-animation-duration, 1s);
+    animation-delay: var(--tw-animation-delay, 0ms);
+    animation-iteration-count: var(--tw-animation-iteration, 1);
     animation-fill-mode: backwards;
     max-width: none;
     overflow: hidden;
@@ -58,6 +91,11 @@
   .play-inverse { animation-direction: reverse; }
   .play-tonfro { animation-direction: alternate; }
   .play-tonfro-inverse { animation-direction: alternate-reverse; }
+  .animate-ease-in { animation-timing-function: var(--ease-in); }
+  .animate-ease-out { animation-timing-function: var(--ease-out); }
+  .animate-ease-in-out { animation-timing-function: var(--ease-in-out); }
+  .animate-ease-linear { animation-timing-function: linear; }
+  .animate-ease-initial { animation-timing-function: initial; }
   /* Experimental */
   .scroll-appear { --scroll-animation-name: appear; }
   .scroll-from-bottom { --scroll-animation-name: from-bottom; }
