@@ -5,60 +5,50 @@ module.exports = {
       [`.scroll${type}-${colorName}::-webkit-scrollbar-${type}`]: {
         'background-color': colorValue,
       },
-      [`.scroll${type}-${colorName}`] : {
-        ...(type == 'thumb'? {'--scrollthumb-color': colorValue} : {'--scrolltrack-color': colorValue}),
-        'scrollbar-color': 'var(--scrollthumb-color, inherit) var(--scrolltrack-color, inherit)'
-      }
+      [`.scroll${type}-${colorName}`]: {
+        ...(type === 'thumb'
+          ? { '--scrollthumb-color': colorValue }
+          : { '--scrolltrack-color': colorValue }),
+        'scrollbar-color': 'var(--scrollthumb-color, inherit) var(--scrolltrack-color, inherit)',
+      },
     });
- 
-    addUtilities(Object.entries(colors).map( ([colorName, colorValue]) => {
-      if(typeof colorValue !== 'object')
-        return makeTemplate('thumb', colorName, colorValue);
-      return Object.entries(colorValue).map(([colorShade, colorHex]) => 
-        makeTemplate('thumb', colorName+'-'+colorShade, colorHex));
-    }));
- 
-    addUtilities(Object.entries(colors).map( ([colorName, colorValue]) => {
-      if(typeof colorValue !== 'object')
-        return makeTemplate('track', colorName, colorValue);
-      return Object.entries(colorValue).map(([colorShade, colorHex]) => 
-        makeTemplate('track', colorName+'-'+colorShade, colorHex));
-    }));
+    const createUtilities = (type) => {
+      const utilities = [];
+      for (const [colorName, colorValue] of Object.entries(colors))
+        if (typeof colorValue === 'string')
+          utilities.push(makeTemplate(type, colorName, colorValue));
+        else
+          for (const [shade, hex] of Object.entries(colorValue))
+            utilities.push(makeTemplate(type, `${colorName}-${shade}`, hex));
+      return utilities;
+    };
+    addUtilities([...createUtilities('thumb'), ...createUtilities('track')]);
   },
-  AnimationDuration: function({ addUtilities, theme, e }) {
+  AnimationDuration: function({ addUtilities, theme }) {
     const transitionDurations = theme('transitionDuration');
     addUtilities(Object.entries(transitionDurations).reduce( (acc, [key, value]) => {
-      acc['.animation-duration-'+e(key)] = {
-        '--animation-duration': value,
-        animationDuration: value 
+      acc[`.animation-duration-${key}`] = {
+        'animation-duration': value 
       };
       return acc;
-    }, {}), ['responsive']);
-  },
-  EventTriggers: function({ addVariant, e }) {
-    addVariant(/^peer(?:-\[(.+?)\])?-([a-z&]+)$/, ({ modifySelectors, separator }, { value, modifier }) => {
-      const peerSelector = value? '.peer'+group : '.peer';
-      const fullClassName = e(`peer${value? `-[${value}]` : ''}-${modifier}${separator}`)
-      modifySelectors(({ className }) => modifier.split('|')
-        .map(state => `${peerSelector}:${state} ~ .${fullClassName}${e(className)}`)
-        .join(', ')
-      );
-    });
+    }, {}));
   },
   extraScreens: {
-    '2xs': '360px',
-    'xs': '480px',
-    'sm': '640px',
-    'md' : '760px',
-    'lg': '900px',
-    'xl': '1080px',
-    '2xl': '1280px',
-    '3xl': '1440px',
-    '4xl': '2048px',
-    'h-2xs': { 'raw': '(max-height: 360px)' },
-    'h-xs': { 'raw': '(max-height: 480px)' },
-    'h-sm': { 'raw': '(max-height: 640px)' },
-    'h-md': { 'raw': '(max-height: 760px)' },
-    'h-lg': { 'raw': '(max-height: 900px)'}
+    '2xs': '22.5rem',
+    'xs': '30rem',
+    'sm': '40rem',
+    'md' : '47.5rem',
+    'lg': '56.25rem',
+    'xl': '67.5rem',
+    '2xl': '80rem',
+    '3xl': '90rem',
+    '4xl': '128rem'
+  },
+  heightScreens: {
+    'h-2xs': { 'raw': '(height <= 22.5rem)' },
+    'h-xs': { 'raw': '(height <= 30rem)' },
+    'h-sm': { 'raw': '(height <= 40rem)' },
+    'h-md': { 'raw': '(height <= 47.5rem)' },
+    'h-lg': { 'raw': '(height <= 56.25rem)'}
   }
 }

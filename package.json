@@ -1,6 +1,6 @@
 {
   "name": "@marthvon/frontail",
-  "version": "0.0.2",
+  "version": "0.2.0",
   "description": "Tailwind Extension",
   "private": false,
   "author": "marthvon <mamertvonn@gmail.com>",
@@ -12,9 +12,15 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": [ "base/", "utilities/", "./plugin.js" ],
-  "exports": { "plugin": { "import": "./plugin.js" } },
-  "main": "./plugin.js",
+  "files": [ "base/*.css", "utilities/*.css", "theme/*.css", "./plugin.js", "types/index.d.ts" ],
+  "exports": { 
+    ".": { "require": "./plugin.js", "types": "./types/index.d.ts" },
+    "./plugin": { "require": "./plugin.js", "types": "./types/index.d.ts" },
+    "./base/*.css": { "default": "./base/*.css" },
+    "./theme/*.css": { "default": "./theme/*.css" },
+    "./utilities/*.css": { "default": "./utilities/*.css" }
+  },
+  "types": "./types/index.d.ts",
   "type": "commonjs",
   "keywords": [
     "Tailwind",

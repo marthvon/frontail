@@ -2,7 +2,6 @@
   display: none;
   position: absolute;
 }
-
 @layer utilities {
   .modal-background {
     position: fixed;

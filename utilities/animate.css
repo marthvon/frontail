@@ -51,9 +51,13 @@
     overflow: hidden;
     display: flex;
   }
-  .animate-keep-last { animation-fill-mode: forwards; }
-  .animate-keep-first { animation-fill-mode: backwards; }
-  .animate-keep-both { animation-fill-mode: both; }
+  .state-keep-last { animation-fill-mode: forwards; }
+  .state-keep-first { animation-fill-mode: backwards; }
+  .state-keep-both { animation-fill-mode: both; }
+  .play-normally { animation-direction: normal; }
+  .play-inverse { animation-direction: reverse; }
+  .play-tonfro { animation-direction: alternate; }
+  .play-tonfro-inverse { animation-direction: alternate-reverse; }
   /* Experimental */
   .scroll-appear { --scroll-animation-name: appear; }
   .scroll-from-bottom { --scroll-animation-name: from-bottom; }
