@@ -32,7 +32,7 @@ module.exports = {
       })
     }, {
       values: Object.fromEntries(Object.entries(theme('transitionDuration'))
-        .map(([key, value]) => [ key, Number(value.replace('ms', '')) ])),
+        .map(([key, value]) => [ key, Number(value.toString().replace('ms', '')) ])),
       type: 'number'
     });
   },
@@ -44,7 +44,7 @@ module.exports = {
       })
     }, {
       values: Object.fromEntries(Object.entries(theme('transitionDuration'))
-        .map(([key, value]) => [ key, Number(value.replace('ms', '')) ])),
+        .map(([key, value]) => [ key, Number(value.toString().replace('ms', '')) ])),
       type: 'number'
     });
   },
