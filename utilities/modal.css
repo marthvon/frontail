@@ -1,46 +1,44 @@
-.peer.input-modal {
+@utility input-modal.peer {
   display: none;
   position: absolute;
 }
-@layer utilities {
-  .modal-background {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    cursor: pointer;
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-  }
-  .bg-clear { background-size: 0% 0%; }
-  .bg-x-down { background-size: 0% 100%; }
-  .bg-y-down { background-size: 100% 0%; }
-  .bg-x-1\/2 { background-size: 50% 100%; }
-  .bg-y-1\/2 { background-size: 100% 50%; }
-  .bg-x-3\/4 { background-size: 75% 100%; }
-  .bg-y-3\/4 { background-size: 100% 75%; }
-  .bg-full { background-size: 100% 100%; }
-  
-  .bg-position {
-    background-position: 0% 100%;
-    background-repeat: no-repeat;
-  }
-  .-bg-position-x {
-    background-position: 200% 100%;
-    background-repeat: no-repeat;
-  }
-  .-bg-position-y {
-    background-position: 0% 200%;
-    background-repeat: no-repeat;
-  }
-  .visible-modal {
-    opacity: 1.0; 
-    max-height: fit-content; 
-    max-width: fit-content;
-  }
-  .hidden-modal {
-    opacity: 0.0; 
-    max-height: 0vh; 
-    max-width: 0vw;
-  }
+@utility modal-background {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  cursor: pointer;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+@utility bg-clear { background-size: 0% 0%; }
+@utility bg-x-down { background-size: 0% 100%; }
+@utility bg-y-down { background-size: 100% 0%; }
+@utility bg-x-1/2 { background-size: 50% 100%; }
+@utility bg-y-1/2 { background-size: 100% 50%; }
+@utility bg-x-3/4 { background-size: 75% 100%; }
+@utility bg-y-3/4 { background-size: 100% 75%; }
+@utility bg-full { background-size: 100% 100%; }
+
+@utility bg-position {
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+}
+@utility -bg-position-x {
+  background-position: 200% 100%;
+  background-repeat: no-repeat;
+}
+@utility -bg-position-y {
+  background-position: 0% 200%;
+  background-repeat: no-repeat;
+}
+@utility visible-modal {
+  opacity: 1@utility 0; 
+  max-height: fit-content; 
+  max-width: fit-content;
+}
+@utility hidden-modal {
+  opacity: 0@utility 0; 
+  max-height: 0vh; 
+  max-width: 0vw;
 }

@@ -1,11 +1,9 @@
-@layer utilities {
-  .preserve-3d { transform-style: preserve-3d; }
-  .perspective-100 { perspective: 1000px; }
-  .perspective-50 { perspective: 500px; }
-  .backface-hidden {
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-  }
-  .flip-xform { transform: rotateY(180deg); }
-  .unflip-xform { transform: rotateY(0deg); }
+@utility preserve-3d { transform-style: preserve-3d; }
+@utility perspective-100 { perspective: 1000px; }
+@utility perspective-50 { perspective: 500px; }
+@utility backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
+@utility flip-xform { transform: rotateY(180deg); }
+@utility unflip-xform { transform: rotateY(0deg); }

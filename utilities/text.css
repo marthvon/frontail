@@ -1,27 +1,25 @@
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-  .text-shadow-wrap {
-    text-shadow: 
-      2px 2px 0px rgba(0, 0, 0, 0.5), 
-      -2px -2px 0px rgba(0, 0, 0, 0),
-      -2px 2px 0px rgba(0, 0, 0, 0.0), 
-      2px -2px 0px rgba(0, 0, 0, 0); 
-  }
-  .gradient-text {
-    background-clip: text;
-    color: transparent;
-  }
-  .text-gradient-read-more {
-    --tw-gradient-from: #000 var(--tw-gradient-from-position);
-    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-    --tw-gradient-to: #000 var(--tw-gradient-to-position);
-    
-  }
-  .text-gradient-see-less {
-    --tw-gradient-from: transparent var(--tw-gradient-from-position);
-    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-    --tw-gradient-to: rgb(0 0 0 / 0.55) var(--tw-gradient-to-position);
-  }
+@utility text-balance {
+  text-wrap: balance;
+}
+@utility text-shadow-wrap {
+  text-shadow: 
+    2px 2px 0px rgba(0, 0, 0, 0@utility 5), 
+    -2px -2px 0px rgba(0, 0, 0, 0),
+    -2px 2px 0px rgba(0, 0, 0, 0@utility 0), 
+    2px -2px 0px rgba(0, 0, 0, 0); 
+}
+@utility gradient-text {
+  background-clip: text;
+  color: transparent;
+}
+@utility text-gradient-read-more {
+  --tw-gradient-from: #000 var(--tw-gradient-from-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: #000 var(--tw-gradient-to-position);
+  
+}
+@utility text-gradient-see-less {
+  --tw-gradient-from: transparent var(--tw-gradient-from-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: rgb(0 0 0 / 0@utility 55) var(--tw-gradient-to-position);
 }

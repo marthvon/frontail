@@ -1,51 +1,55 @@
-@layer utilities {
-  .scrollbar-none::-webkit-scrollbar {
+@utility scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
     display: none;
   }
-  .scrollbar-none {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  } 
-  .scrollbar-thin::-webkit-scrollbar-thumb, .scrollbar-thin::-webkit-scrollbar-track {
+}
+@utility scrollbar-thin {
+  scrollbar-width: thin;
+  &::-webkit-scrollbar-thumb {
     width: 2px;
-    border-radius: 2px; 
+    border-radius: 2px;
   }
-  .scrollbar-thin {
-    scrollbar-width: thin;
+  &::-webkit-scrollbar-track {
+    width: 2px;
+    border-radius: 2px;
   }
-  .hide-scrollbutton::-webkit-scrollbar-button {
+}
+@utility hide-scrollbutton {
+  &::-webkit-scrollbar-button {
     display: none;
     background-color: transparent;
     visibility: hidden;
     opacity: 0%;
   }
-  /* Experimental */
-  .scroll-animation-both {
-    animation: var(--scroll-animation-name) linear both;
-    animation-timeline: view();
-    animation-duration: 1000ms;
-    animation-range: entry 50% cover 50%;
-  }
-  .scroll-animation {
-    animation: var(--scroll-animation-name) linear;
-    animation-timeline: view();
-    animation-duration: 1000ms;
-    animation-range: entry var(--scroll-entry, 50%)  cover var(--scroll-cover, 50%);
-  }
-  .disable-scroll-animation {
-    animation-timeline: none;
-    animation: none;
-  }
-  .scrollentry-1\/4 {
-    --scroll-entry: 25%;
-  }
-  .scrollentry-3\/4 {
-    --scroll-entry: 100%;
-  }
-  .scrollcover-1\/4 {
-    --scroll-cover: 25%;
-  }
-  .scrollcover-3\/4 {
-    --scroll-cover: 75%;
-  }
+}
+/* Experimental */
+@utility scroll-animation-both {
+  animation: var(--scroll-animation-name) linear both;
+  animation-timeline: view();
+  animation-duration: 1000ms;
+  animation-range: entry 50% cover 50%;
+}
+@utility scroll-animation {
+  animation: var(--scroll-animation-name) linear;
+  animation-timeline: view();
+  animation-duration: 1000ms;
+  animation-range: entry var(--scroll-entry, 50%)  cover var(--scroll-cover, 50%);
+}
+@utility disable-scroll-animation {
+  animation-timeline: none;
+  animation: none;
+}
+@utility scrollentry-1/4 {
+  --scroll-entry: 25%;
+}
+@utility scrollentry-3/4 {
+  --scroll-entry: 100%;
+}
+@utility scrollcover-1/4 {
+  --scroll-cover: 25%;
+}
+@utility scrollcover-3/4 {
+  --scroll-cover: 75%;
 }
