@@ -1,4 +1,4 @@
-@utility input-modal.peer {
+@utility input-modal {
   display: none;
   position: absolute;
 }
@@ -29,16 +29,16 @@
   background-repeat: no-repeat;
 }
 @utility -bg-position-y {
-  background-position: 0% 200%;
+  background-position: 0% -100%;
   background-repeat: no-repeat;
 }
 @utility visible-modal {
-  opacity: 1@utility 0; 
+  opacity: 1.0; 
   max-height: fit-content; 
   max-width: fit-content;
 }
 @utility hidden-modal {
-  opacity: 0@utility 0; 
+  opacity: 0.0; 
   max-height: 0vh; 
   max-width: 0vw;
 }
