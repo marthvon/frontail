@@ -1,11 +1,16 @@
 @theme {
-   --breakpoint-2xs: 22.5rem;
-   --breakpoint-xs: 30rem;
-   --breakpoint-sm: 40rem;
-   --breakpoint-md: 47.5rem;
-   --breakpoint-lg: 56.25rem;
-   --breakpoint-xl: 67.5rem;
-   --breakpoint-2xl: 80rem;
-   --breakpoint-3xl: 90rem;
-   --breakpoint-4xl: 128rem;
+  --breakpoint-2xs: 22.5rem;
+  --breakpoint-xs: 30rem;
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 47.5rem;
+  --breakpoint-lg: 56.25rem;
+  --breakpoint-xl: 67.5rem;
+  --breakpoint-2xl: 80rem;
+  --breakpoint-3xl: 90rem;
+  --breakpoint-4xl: 128rem;
+  --container-8xl: 88rem;
+  --container-9xl: 96rem;
+  --container-10xl: 104rem;
+  --container-11xl: 112rem;
+  --container-12xl: 120rem;
 }

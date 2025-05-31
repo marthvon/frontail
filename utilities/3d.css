@@ -8,10 +8,10 @@
 @utility flip-xform { transform: rotateY(180deg); }
 @utility unflip-xform { transform: rotateY(0deg); }
 @utility carousel {
-  transform: rotateY(var(--tw-degrees-left)) translateZ(250px) rotateY(var(--tw-degrees-right)),
-  opacity: var(--tw-opacity)
+  transform: rotateY(var(--tw-degrees-left)) translateZ(250px) rotateY(var(--tw-degrees-right));
+  opacity: var(--tw-opacity);
 }
-@utility loader {
+@utility linear-loader {
   background: linear-gradient(var(--tw-gradient-from) 0 0) 0/0% no-repeat var(--tw-gradient-to);
   animation: linear_loader var(--tw-animation-duration) infinite linear;
 }

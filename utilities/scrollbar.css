@@ -24,6 +24,18 @@
     opacity: 0%;
   }
 }
+@utility direction-ltr {
+  direction: ltr;
+}
+@utility direction-rtl {
+  direction: rtl;
+}
+@utility left-scrollbar {
+  direction: rtl;
+  &>* {
+    direction: ltr;
+  }
+}
 /* Experimental */
 @utility scroll-animation-both {
   animation: var(--scroll-animation-name) linear both;
