@@ -83,6 +83,7 @@
   overflow: hidden;
   display: flex;
 }
+@utility animate-infinislider { animation: infinislider var(--tw-animation-duration) infinite; }
 @utility state-keep-last { animation-fill-mode: forwards; }
 @utility state-keep-first { animation-fill-mode: backwards; }
 @utility state-keep-both { animation-fill-mode: both; }
@@ -95,6 +96,8 @@
 @utility animate-ease-in-out { animation-timing-function: var(--ease-in-out); }
 @utility animate-ease-linear { animation-timing-function: linear; }
 @utility animate-ease-initial { animation-timing-function: initial; }
+@utility animation-paused { animation-play-state: paused; }
+@utility animation-start { animation-play-state: running; }
 /* Experimental */
 @utility scroll-appear { --scroll-animation-name: appear; }
 @utility scroll-from-bottom { --scroll-animation-name: from-bottom; }

@@ -23,3 +23,35 @@
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: rgb(0 0 0 / 0.55) var(--tw-gradient-to-position);
 }
+@utility textbox-a1 {
+  border-top-left-radius: var(--radius-md);
+  border-top-right-radius: var(--radius-md);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-style: var(--tw-border-style);
+  border-bottom-width: 2px;
+
+  &:focus {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 2px;
+  }
+}
+@utility textbox-a0 {
+  &:placeholder-shown {
+    border-bottom-right-radius: var(--radius-md);
+    border-bottom-left-radius: var(--radius-md);
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 0px;
+  }
+  &:focus {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+@utility textbox-label-a {
+  pointer-events: none;
+  &:is(:where(.peer):placeholder-shown ~ *) {
+    --tw-translate-y: calc(calc(100% + 0.25rem) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+}

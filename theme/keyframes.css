@@ -1,69 +1,53 @@
 @theme {
   @keyframes draw {
-    to {
-      stroke-dashoffset: 0;
-    }
+    to { stroke-dashoffset: 0; }
   }
-  
   @keyframes from-left {
     from { transform: translate(-50%, var(--tw-translate-y, 0%)) skewX(var(--tw-skew-x, 0deg)) skewY(var(--tw-skew-y, 0deg)) scaleX(var(--tw-scale-x, 100%)) scaleY(var(--tw-scale-y, 100%)); opacity: 0; pointer-events: none; animation-timing-function: ease-out; }
     to { transform: translate(var(--tw-translate-x, 0%), var(--tw-translate-y, 0%)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y, 100%)) scaleX(var(--tw-scale-x, 100%)) scaleY(var(--tw-scale-y)); opacity: 1; pointer-events: all; animation-timing-function: ease-out; }
   }
-   
   @keyframes from-right {
     from { transform: translate(50%, var(--tw-translate-y, 0%)) skewX(var(--tw-skew-x, 0deg)) skewY(var(--tw-skew-y, 0deg)) scaleX(var(--tw-scale-x, 100%)) scaleY(var(--tw-scale-y, 100%)); opacity: 0; pointer-events: none; animation-timing-function: ease-out; }
     to { transform: translate(var(--tw-translate-x, 0%), var(--tw-translate-y, 0%)) skewX(var(--tw-skew-x, 0deg)) skewY(var(--tw-skew-y, 0deg)) scaleX(var(--tw-scale-x, 100%)) scaleY(var(--tw-scale-y, 100%)); opacity: 1; pointer-events: all; animation-timing-function: ease-out; }
   }
-   
   @keyframes from-top {
     from { transform: translate(var(--tw-translate-x, 0%), -25%) skewX(var(--tw-skew-x, 0deg)) skewY(var(--tw-skew-y, 0deg)) scaleX(var(--tw-scale-x, 100%)) scaleY(var(--tw-scale-y, 100%)); opacity: 0; pointer-events: none; animation-timing-function: ease-out; }
     to { transform: translate(var(--tw-translate-x, 0%), var(--tw-translate-y, 0%)) skewX(var(--tw-skew-x, 0deg)) skewY(var(--tw-skew-y, 0deg)) scaleX(var(--tw-scale-x, 100%)) scaleY(var(--tw-scale-y, 100%)); opacity: 1; pointer-events: all; animation-timing-function: ease-out; }
   }
-   
   @keyframes from-bottom {
     from { transform: translate(var(--tw-translate-x, 0%), 25%) skewX(var(--tw-skew-x, 0deg)) skewY(var(--tw-skew-y, 0deg)) scaleX(var(--tw-scale-x, 100%)) scaleY(var(--tw-scale-y, 100%)); opacity: 0; pointer-events: none; animation-timing-function: ease-out; }
     to { transform: translate(var(--tw-translate-x, 0%), var(--tw-translate-y, 0%)) skewX(var(--tw-skew-x, 0deg)) skewY(var(--tw-skew-y, 0deg)) scaleX(var(--tw-scale-x, 100%)) scaleY(var(--tw-scale-y, 100%)); opacity: 1; pointer-events: all; animation-timing-function: ease-out; }
   }
-  
   @keyframes from-scale {
     from { transform: translate(var(--tw-translate-x, 0%), var(--tw-translate-y, 0%)) skewX(var(--tw-skew-x, 0deg)) skewY(var(--tw-skew-y, 0deg)) scaleX(75%) scaleY(75%); opacity: 0; pointer-events: none; animation-timing-function: ease-out; }
     to { transform: translate(var(--tw-translate-x, 0%), var(--tw-translate-y, 0%)) skewX(var(--tw-skew-x, 0deg)) skewY(var(--tw-skew-y, 0deg)) scaleX(var(--tw-scale-x, 100%)) scaleY(var(--tw-scale-y, 100%)); opacity: 1; pointer-events: all; animation-timing-function: ease-out; }
   }
-  
   @keyframes appear {
     from { opacity: 0; animation-timing-function: ease-in-out; }
     to { opacity: 1; animation-timing-function: ease-in-out; }
   }
-  
   @keyframes fadeout {
     0% { opacity: 1.0; max-height: fit-content; max-width: fit-content; animation-timing-function: ease-in; }
     75% { opacity: 1.0; max-height: fit-content; max-width: fit-content; animation-timing-function: ease-in; }
     99% { opacity: 0.0; max-height: fit-content; max-width: fit-content; animation-timing-function: ease-in; }
     100% { opacity: 0.0; max-height: 0vh; max-width: 0vw; animation-timing-function: steps(2, jump-both);}
   }
-  
   @keyframes fadein {
     0% { opacity: 0.0; max-height: 0vh; max-width: 0vw; animation-timing-function: steps(2, jump-both);}
     1% { opacity: 0.0; max-height: fit-content; max-width: fit-content; animation-timing-function: ease-in; }
     25% { opacity: 1.0; max-height: fit-content; max-width: fit-content; animation-timing-function: ease-in; }
     100% { opacity: 1.0; max-height: fit-content; max-width: fit-content; animation-timing-function: ease-in; }
   }
-
   @keyframes arise {
-    0% {
-      max-height: 0vh;
-    }
-    100% {
-      max-height: 100vh;
-    }
+    0% { max-height: 0vh; }
+    100% { max-height: 100vh; }
   }
-
   @keyframes slide {
-    0% {
-      max-width: 0vh;
-    }
-    100% {
-      max-width: 100vh;
-    }
+    0% { max-width: 0vh; }
+    100% { max-width: 100vh; }
+  }
+  @keyframes infinislider {
+    from { transform: translateX(0%); animation-timing-function: linear; }
+    to { transform: translateX(-1000%); animation-timing-function: linear; }
   }
 }

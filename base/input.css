@@ -6,16 +6,24 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    margin: 0; /* Optional: Remove any spacing around the buttons */
+    margin: 0;
   } 
-
   input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
     -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    margin: 0;
   }
-
   input[type=number] {
     appearance:textfield; /* Firefox */
-  }  
+  }
+  input[type="text"], input[type="number"], input[type="numeric"], input[type="decimal"],
+  input[type="search"], input[type="email"], input[type="tel"], input[type="url"], textarea {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    resize: none;
+    &:focus {
+      --tw-outline-style: none;
+      outline-style: none;
+    }
+  }
 }
