@@ -1,0 +1,19 @@
+@layer components {
+  .toggle-base {
+    height: max(min(3.75vh, 2.25rem), 1.75rem);
+    aspect-ratio: 7/4;
+  }
+  .toggle-track {
+    @apply bg-slate-200 shadow-inner rounded-full;
+  }
+  .toggle-thumb-wrapper {
+    @apply pointer-events-none h-full aspect-square transition-all p-1;
+    &:is(:where(.peer):checked ~ *) {
+      margin-left: 100%;
+      transform: translateX(-100%);
+    }
+  }
+  .toggle-thumb {
+    @apply bg-white w-full h-full rounded-full shadow-2xl;
+  }
+}

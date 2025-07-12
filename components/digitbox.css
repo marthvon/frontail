@@ -1,0 +1,5 @@
+@layer components {
+  .code-box {
+    @apply bg-slate-200 shadow-inner rounded-xl text-center h-full w-fit aspect-square text-xl font-semibold;
+  }
+}

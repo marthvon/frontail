@@ -1,0 +1,31 @@
+@layer components {
+  .textbox-a1 {
+    @apply border-black;
+    &:placeholder-shown {
+      @apply border-b-0 rounded-b-md;
+    }
+  }
+  .textbox-a0 {
+    @apply border-b-2 p-2 bg-zinc-100 rounded-b-none rounded-t-md;
+    &:focus {
+      @apply border-b-2 rounded-b-none;
+    }
+  }
+  .textbox-text-a {
+    @apply translate-y-1 font-semibold transition-all duration-300;
+  }
+  .textbox-label-a {
+    @apply text-sm ml-3 text-black;
+    &:is(:where(.peer):placeholder-shown ~ *) {
+      --tw-translate-y: calc(calc(100% + 0.25rem) * -1);
+      color: var(--color-slate-500);
+    }
+    &:is(:where(.peer):focus ~ *) {
+      --tw-translate-y: calc(var(--spacing) * 1);
+      color: var(--color-black);
+    }
+  }
+  .textbox-error-a {
+    @apply text-xs ml-1 text-red-600;
+  }
+}

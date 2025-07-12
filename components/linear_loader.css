@@ -1,0 +1,14 @@
+@theme {
+  @keyframes linear_loader {
+    100% {background-size:100%}
+  }
+}
+@layer components {
+  .linear-loader {
+    background: linear-gradient(var(--tw-gradient-from) 0 0) 0/0% no-repeat var(--tw-gradient-to);
+    animation: linear_loader var(--tw-animation-duration) infinite linear;
+  }
+  .linear-loader-base {
+    @apply rounded w-24 h-5;
+  }
+}

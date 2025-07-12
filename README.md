@@ -12,7 +12,7 @@ Consist of plugins and utility css file that integrates with Tailwind seamlessly
 # Installation Guide
 
 ``` bash
-npm install tailwindcss postcss postcss-import autoprefixer @marthvon/frontail
+npm install tailwindcss postcss postcss-import autoprefixer @marthvon/frontail --save-dev
 ```
 
 # Configuration Setup 

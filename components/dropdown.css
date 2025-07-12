@@ -1,0 +1,75 @@
+@layer components {
+  .dropdown-outer-modal {
+    @apply transition-all duration-300 p-4 h-fit;
+  }
+  .dropdown-modal {
+    @apply flex flex-col rounded-xl bg-white drop-shadow-xl h-fit;
+  }
+  .dropdown-wrapper {
+    @apply flex transition-all duration-300 z-10 opacity-0;
+  }
+}
+@utility dropdown-hover-top {
+  &>div { transform: translateY(0px); pointer-events: none; }
+  &:is(:where(.group):hover *) {
+    @media (hover: hover) {
+      &>div { transform: translateY(-100%); pointer-events: auto; }
+      opacity: 100%;
+    }
+  }
+}
+@utility dropdown-click-top {
+  &>div { transform: translateY(0px); pointer-events: none; }
+  &:is(:where(.peer):checked ~ *) {
+    &>div { transform: translateY(-100%); pointer-events: auto; }
+    opacity: 100%;
+  }
+}
+@utility dropdown-hover-left {
+  &>div { transform: translateX(0px); pointer-events: none; }
+  &:is(:where(.group):hover *) {
+    @media (hover: hover) {
+      &>div { transform: translateX(-100%); pointer-events: auto; }
+      opacity: 100%;
+    }
+  } 
+}
+@utility dropdown-click-left {
+  &>div { transform: translateX(0px); pointer-events: none; }
+  &:is(:where(.peer):checked ~ *) {
+    &>div { transform: translateX(-100%); pointer-events: auto; }
+    opacity: 100%;
+  }
+}
+@utility dropdown-hover-bottom {
+  &>div { transform: translateY(-100%); pointer-events: none; }
+  &:is(:where(.group):hover *) {
+    @media (hover: hover) {
+      &>div { transform: translateY(0px); pointer-events: auto; }
+      opacity: 100%;
+    }
+  }
+}
+@utility dropdown-click-bottom {
+  &>div { transform: translateY(-100%); pointer-events: none; }
+  &:is(:where(.peer):checked ~ *) {
+    &>div { transform: translateY(0px); pointer-events: auto; }
+    opacity: 100%;
+  }
+}
+@utility dropdown-hover-right {
+  &>div { transform: translateX(-100%); pointer-events: none; }
+  &:is(:where(.group):hover *) {
+    @media (hover: hover) {
+      &>div { transform: translateX(0px); pointer-events: auto; }
+      opacity: 100%;
+    }
+  }  
+}
+@utility dropdown-click-right {
+  &>div { transform: translateX(-100%); pointer-events: none; }
+  &:is(:where(.peer):checked ~ *) {
+    &>div { transform: translateX(0px); pointer-events: auto; }
+    opacity: 100%;
+  }
+}

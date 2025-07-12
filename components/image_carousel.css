@@ -1,0 +1,16 @@
+@layer components {
+  .image_carousel {
+    @apply max-h-full animate-appear opacity-0 max-w-256;
+  }
+  .carousel {
+    transform: rotateY(var(--tw-degrees-left)) translateZ(250px) rotateY(var(--tw-degrees-right));
+    opacity: var(--tw-opacity);
+    @apply m-auto transition-all duration-[800ms];
+  }
+  .carousel-arrows {
+    @apply -translate-1/2 text-4xl group-active:scale-150 transition-all;
+  }
+  .-carousel-arrows {
+    @apply min-w-16 h-full cursor-pointer z-10;
+  }
+}

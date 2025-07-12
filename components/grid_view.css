@@ -1,0 +1,5 @@
+@layer components {
+  .grid-view {
+    @apply columns-1 @md:columns-2 @3xl:columns-3 @5xl:columns-4 @8xl:columns-5 @10xl:columns-6 @12xl:columns-7;
+  }
+}
