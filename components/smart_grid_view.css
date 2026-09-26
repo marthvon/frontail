@@ -1,0 +1,17 @@
+@layer components {
+  .smart-grid-view {
+    @apply @container w-full overflow-y-auto overflow-x-hidden;
+  }
+  .smart-grid-columns {
+    @apply flex flex-row w-full gap-3 [--tw-smart-grid-cols:1] @md:[--tw-smart-grid-cols:2] @3xl:[--tw-smart-grid-cols:3] @5xl:[--tw-smart-grid-cols:4] @8xl:[--tw-smart-grid-cols:5] @10xl:[--tw-smart-grid-cols:6] @12xl:[--tw-smart-grid-cols:7];
+  }
+  .smart-grid-column {
+    @apply flex flex-col w-full min-w-0 gap-3;
+  }
+  .smart-grid-card {
+    @apply h-fit w-full;
+  }
+  .smart-grid-sentinel {
+    @apply w-full h-px;
+  }
+}

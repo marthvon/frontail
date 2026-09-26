@@ -1,0 +1,57 @@
+@layer components {
+  .datepicker {
+    container-type: inline-size;
+    @apply w-full;
+  }
+  .datepicker-heading {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    @apply items-center;
+  }
+  .datepicker-heading button {
+    @apply px-2 py-1 cursor-pointer bg-transparent border-0;
+  }
+  .datepicker-weekdays,
+  .datepicker-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+  .datepicker-weekday {
+    @apply flex items-center justify-center py-1 text-sm opacity-70;
+  }
+  .datepicker-cell {
+    aspect-ratio: 1 / 1;
+    @apply flex items-center justify-center w-full cursor-pointer bg-transparent border-0 p-0;
+  }
+  .datepicker-cell-selected {
+    @apply bg-zinc-200 rounded-lg;
+  }
+  .datepicker-cell-today {
+    @apply font-semibold;
+  }
+  .datepicker-cell-outside {
+    @apply opacity-40;
+  }
+  .datepicker-day-mini {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .datepicker-day-full {
+    display: none;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  @container (min-width: 240px) {
+    .datepicker-day-mini {
+      display: none;
+    }
+    .datepicker-day-full {
+      display: flex;
+    }
+  }
+}
