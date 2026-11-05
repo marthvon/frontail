@@ -1,6 +1,6 @@
 {
   "name": "@marthvon/frontail",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "description": "Tailwind Extension",
   "private": false,
   "author": "marthvon <mamertvonn@gmail.com>",
@@ -12,17 +12,35 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": [ 
-    "base/*.css", "components/*.css", "utilities/*.css", 
-    "theme/*.css", "./plugin.js", "types/index.d.ts" 
+  "files": [
+    "base/*.css",
+    "components/*.css",
+    "utilities/*.css",
+    "theme/*.css",
+    "./plugin.js",
+    "types/index.d.ts"
   ],
-  "exports": { 
-    ".": { "require": "./plugin.js", "types": "./types/index.d.ts" },
-    "./plugin": { "require": "./plugin.js", "types": "./types/index.d.ts" },
-    "./base/*.css": { "default": "./base/*.css" },
-    "./components/*.css": { "default": "./components/*.css" },
-    "./theme/*.css": { "default": "./theme/*.css" },
-    "./utilities/*.css": { "default": "./utilities/*.css" }
+  "exports": {
+    ".": {
+      "require": "./plugin.js",
+      "types": "./types/index.d.ts"
+    },
+    "./plugin": {
+      "require": "./plugin.js",
+      "types": "./types/index.d.ts"
+    },
+    "./base/*.css": {
+      "default": "./base/*.css"
+    },
+    "./components/*.css": {
+      "default": "./components/*.css"
+    },
+    "./theme/*.css": {
+      "default": "./theme/*.css"
+    },
+    "./utilities/*.css": {
+      "default": "./utilities/*.css"
+    }
   },
   "devDependencies": {
     "tailwindcss": "^4.0.0"
