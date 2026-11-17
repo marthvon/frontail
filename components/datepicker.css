@@ -3,6 +3,9 @@
     container-type: inline-size;
     @apply w-full;
   }
+  .datepicker.datepicker-popup {
+    @apply w-72;
+  }
   .datepicker-heading {
     display: grid;
     grid-template-columns: auto 1fr auto;

@@ -1,0 +1,29 @@
+@layer components {
+  .field {
+    @apply flex flex-col gap-1 text-sm;
+  }
+  .field-label {
+    @apply truncate text-zinc-500;
+  }
+  .field-label-hidden {
+    @apply sr-only;
+  }
+  .field-box {
+    @apply h-9 w-full min-w-0 rounded-md border border-zinc-300 bg-white px-3 text-sm text-zinc-900;
+  }
+  .field-invalid {
+    @apply border-red-600;
+  }
+  .field-error {
+    @apply text-xs text-red-700;
+  }
+  .field-button {
+    @apply h-9 cursor-pointer rounded-md border border-zinc-300 bg-white px-3 text-sm font-medium text-zinc-900 hover:bg-zinc-100 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .field-icon-button {
+    @apply inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-md border border-zinc-300 bg-white text-zinc-900 hover:bg-zinc-100 disabled:cursor-not-allowed disabled:opacity-60;
+    & > svg {
+      @apply h-4 w-4;
+    }
+  }
+}

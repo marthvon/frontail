@@ -1,0 +1,26 @@
+@layer components {
+  .phone-field {
+    @apply relative m-2;
+  }
+  .phone-row {
+    @apply flex w-full min-w-0 gap-2;
+  }
+  .phone-dial {
+    @apply w-max shrink-0;
+    & .select-dropdown {
+      @apply w-max;
+    }
+    & .select-trigger {
+      @apply w-max px-2;
+    }
+  }
+  .phone-number {
+    @apply relative min-w-0 grow;
+  }
+  .textbox-a0.phone-floating {
+    @apply h-9 w-full text-base whitespace-nowrap;
+  }
+  .phone-flag {
+    @apply h-3.5 w-5 shrink-0 overflow-hidden rounded-[1px] ring-1 ring-zinc-300/60;
+  }
+}

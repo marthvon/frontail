@@ -1,0 +1,309 @@
+/* A table under its stack width shows each row as a card. The table names its container after that width, and only the query of that name can match it. */
+@custom-variant table-stacked {
+  @container table-stack-24 (width < 24rem) { @slot; }
+  @container table-stack-32 (width < 32rem) { @slot; }
+  @container table-stack-40 (width < 40rem) { @slot; }
+  @container table-stack-48 (width < 48rem) { @slot; }
+  @container table-stack-56 (width < 56rem) { @slot; }
+  @container table-stack-64 (width < 64rem) { @slot; }
+  @container table-stack-72 (width < 72rem) { @slot; }
+  @container table-stack-80 (width < 80rem) { @slot; }
+  @container table-stack-88 (width < 88rem) { @slot; }
+  @container table-stack-96 (width < 96rem) { @slot; }
+  @container table-stack-104 (width < 104rem) { @slot; }
+  @container table-stack-112 (width < 112rem) { @slot; }
+}
+@custom-variant table-tall (@media (min-height: 40rem) and (min-width: 40rem));
+
+@layer components {
+  .resource-table {
+    container-type: inline-size;
+    @apply rounded-xl border border-zinc-300 bg-white;
+    @variant table-tall {
+      @apply flex min-h-fit flex-initial flex-col;
+    }
+  }
+  .resource-table.resource-table-fill {
+    @apply flex max-h-full min-h-fit min-w-0 flex-1 flex-col;
+  }
+  .resource-table.resource-table-many {
+    @variant table-tall {
+      @apply min-h-60;
+    }
+  }
+  .resource-table-scroll {
+    @apply min-w-0 overflow-x-hidden;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    @variant table-tall {
+      @apply min-h-0 flex-initial overflow-y-auto;
+    }
+  }
+  .resource-table-scroll.resource-table-scroll-bound {
+    @apply min-h-0 min-w-0 flex-1 overflow-x-hidden overflow-y-auto;
+  }
+  /* Row menus hang outside the table, so the scroller only clips once it has enough rows to need scrolling. */
+  .resource-table-scroll:not(.resource-table-scroll-bound):not(:has(tbody > tr:nth-child(4))) {
+    overflow: visible;
+  }
+  @media not ((min-height: 40rem) and (min-width: 40rem)) {
+    .resource-table-scroll:not(.resource-table-scroll-bound) {
+      overflow: visible;
+    }
+  }
+  .resource-table-grid {
+    @apply w-full table-fixed text-left text-sm;
+    @variant table-stacked {
+      display: block;
+    }
+  }
+  .resource-table-head {
+    @apply border-b border-zinc-300 bg-zinc-50 text-xs uppercase tracking-wide text-zinc-500;
+    @variant table-stacked {
+      display: block;
+    }
+    @variant table-tall {
+      @apply sticky top-0 z-[1];
+    }
+  }
+  .resource-table-fill .resource-table-head {
+    @apply sticky top-0 z-[1];
+  }
+  .resource-table-head.resource-table-head-quiet {
+    @variant table-stacked {
+      display: none;
+    }
+  }
+  .resource-table-head-row {
+    @variant table-stacked {
+      @apply flex flex-wrap items-center gap-x-4 gap-y-1 px-4 py-2;
+    }
+  }
+  .resource-table-check-heading {
+    @apply w-10 py-3 pl-4;
+    @variant table-stacked {
+      @apply w-auto p-0;
+    }
+  }
+  .resource-table-checkbox {
+    @apply h-4 w-4 cursor-pointer accent-zinc-900;
+  }
+  .resource-table-sort-by {
+    @apply hidden font-medium;
+    @variant table-stacked {
+      @apply block p-0;
+    }
+  }
+  .resource-table-sortable {
+    @apply px-1 py-0.5 font-medium;
+    @variant table-stacked {
+      @apply w-auto min-w-0 max-w-full basis-auto p-0;
+    }
+  }
+  .resource-table-heading {
+    @apply px-3 py-2 font-medium;
+    @variant table-stacked {
+      display: none;
+    }
+  }
+  .resource-table-heading-text {
+    @apply uppercase tracking-wide;
+  }
+  .resource-table-action-heading {
+    @apply px-3 py-2;
+    @variant table-stacked {
+      display: none;
+    }
+  }
+  .resource-table-body {
+    @variant table-stacked {
+      display: block;
+    }
+  }
+  .resource-table-message {
+    @variant table-stacked {
+      display: block;
+    }
+    & > td {
+      @apply px-4 py-8 text-center text-zinc-500;
+      @variant table-stacked {
+        display: block;
+      }
+    }
+  }
+  .resource-table-row {
+    @apply border-b border-zinc-200 last:border-0;
+    @variant table-stacked {
+      @apply relative flex flex-wrap gap-x-4 gap-y-1 py-3 pr-12 pl-4;
+    }
+  }
+  .resource-table-row.resource-table-selectable {
+    @variant table-stacked {
+      @apply pl-11;
+    }
+  }
+  .resource-table-row.resource-table-selected {
+    @apply bg-sky-50;
+  }
+  .resource-table-row.resource-table-clickable {
+    @apply cursor-pointer hover:bg-zinc-50;
+  }
+  .resource-table-check {
+    @apply w-10 py-3 pl-4;
+    @variant table-stacked {
+      @apply absolute top-3.5 left-4 w-auto p-0;
+    }
+  }
+  .resource-table-cell {
+    @apply min-w-0 px-3 py-2;
+    @variant table-stacked {
+      @apply min-w-0 p-0;
+    }
+  }
+  .resource-table-date-col {
+    @apply min-w-36;
+  }
+  .resource-table-cell.resource-table-date-col {
+    @variant table-stacked {
+      @apply min-w-0;
+    }
+  }
+  .resource-table-lead {
+    @variant table-stacked {
+      @apply max-w-full basis-full font-medium;
+    }
+  }
+  .resource-table-rest {
+    @variant table-stacked {
+      @apply w-(--card-w) max-w-[calc(50%-0.5rem)] min-w-0;
+    }
+  }
+  .resource-table-edged {
+    position: relative;
+    @variant table-stacked {
+      position: static;
+    }
+  }
+  .resource-table-dimmed {
+    @apply opacity-50;
+  }
+  .resource-table-edge {
+    @apply pointer-events-none absolute inset-y-2 left-1 w-1 rounded-full bg-zinc-400;
+  }
+  .resource-table-edge-label {
+    @apply sr-only;
+  }
+  .resource-table-card-label {
+    @apply hidden text-xs uppercase tracking-wide text-zinc-500;
+    @variant table-stacked {
+      display: block;
+    }
+  }
+  .resource-table-pill {
+    @apply rounded-full bg-zinc-100 px-2 py-0.5 text-xs text-zinc-600;
+  }
+  .resource-table-tag {
+    @apply ml-1 rounded-full bg-zinc-100 px-2 py-0.5 text-xs text-zinc-500;
+  }
+  .resource-table-value {
+    @apply inline-flex w-fit min-w-0 max-w-full items-baseline;
+    @variant table-stacked {
+      display: inline;
+    }
+  }
+  .resource-table-line {
+    @apply min-w-0 max-w-full;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    @variant table-stacked {
+      white-space: normal;
+      text-overflow: clip;
+    }
+  }
+  tr:hover .resource-table-line,
+  tr:focus-visible .resource-table-line,
+  tr:focus-within .resource-table-line {
+    text-overflow: unset;
+    white-space: normal;
+  }
+  @media (hover: none) {
+    .resource-table-line {
+      text-overflow: unset;
+      white-space: normal;
+    }
+  }
+  .resource-table-line.resource-table-date {
+    white-space: nowrap !important;
+    overflow-wrap: normal !important;
+  }
+  .resource-table-note {
+    @apply mt-0.5 block whitespace-pre-line text-xs text-zinc-500;
+  }
+  .resource-table-actions {
+    @apply px-3 py-2 text-right;
+    @variant table-stacked {
+      @apply absolute top-2 right-2 p-0;
+    }
+  }
+  .resource-table-menu-anchor {
+    @apply relative inline-block;
+  }
+  .resource-table-menu-button {
+    @apply cursor-pointer rounded-md p-1 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900;
+    & > svg {
+      @apply h-5 w-5;
+    }
+  }
+  .resource-table-menu {
+    @apply absolute right-0 z-10 w-44 rounded-md border border-zinc-300 bg-white p-1 text-left shadow-lg;
+    top: calc(100% + 0.25rem);
+  }
+  .resource-table-body > tr:nth-last-child(-n + 2):not(:first-child) .resource-table-menu {
+    top: auto;
+    bottom: calc(100% + 0.25rem);
+  }
+  .resource-table-menu-item,
+  .resource-table-link {
+    @apply cursor-pointer rounded-md text-sm font-medium text-zinc-900 hover:bg-zinc-100;
+    &[data-tone="danger"] {
+      @apply text-red-700 hover:bg-red-50;
+    }
+    &[data-tone="restore"] {
+      @apply text-emerald-700 hover:bg-emerald-50;
+    }
+    &[data-tone="caution"] {
+      @apply text-amber-900 hover:bg-amber-50;
+    }
+  }
+  .resource-table-menu-item {
+    @apply w-full px-3 py-2 text-left;
+  }
+  .resource-table-link {
+    @apply mr-1 px-2 py-1 underline;
+  }
+  .resource-table-footer {
+    @apply flex flex-wrap items-center justify-between gap-3 border-t border-zinc-300 px-4 py-3 text-sm text-zinc-500;
+  }
+  .resource-table-fill .resource-table-footer {
+    @apply shrink-0;
+  }
+  .resource-table-pager {
+    @apply flex items-center gap-3;
+  }
+  .resource-table-pager.resource-table-pager-end {
+    @apply ml-auto;
+  }
+  .resource-table-size {
+    @apply flex items-center gap-2;
+  }
+  .resource-table-size-select {
+    @apply cursor-pointer rounded-md border border-zinc-300 bg-white px-2 py-1 text-zinc-900;
+  }
+  .resource-table-page-button {
+    @apply cursor-pointer rounded-md border border-zinc-300 px-3 py-1 font-medium text-zinc-900 disabled:cursor-not-allowed disabled:opacity-40;
+  }
+}

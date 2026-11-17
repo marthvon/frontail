@@ -1,0 +1,28 @@
+@layer components {
+  .select-dropdown {
+    @apply w-full;
+    --tw-modal-tint: transparent;
+  }
+  .select-anchored {
+    position: relative;
+  }
+  .select-trigger {
+    @apply flex items-center gap-1.5;
+  }
+  .select-value {
+    @apply min-w-0 truncate;
+  }
+  .dropdown-outer-modal.select-outer {
+    @apply p-0;
+  }
+  .dropdown-modal.select-menu {
+    @apply min-w-48 max-h-60 overflow-x-hidden overflow-y-auto text-zinc-900;
+    scrollbar-width: thin;
+  }
+  .select-option {
+    @apply flex w-full cursor-pointer items-center gap-2 px-3 py-2 text-left text-sm hover:bg-zinc-100;
+  }
+  .select-tick {
+    @apply w-3 shrink-0;
+  }
+}

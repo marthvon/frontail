@@ -1,0 +1,127 @@
+@layer components {
+  .text-editor-field {
+    @apply m-2;
+  }
+  .text-editor {
+    container-type: inline-size;
+    @apply rounded-md border border-zinc-300 bg-white;
+    &.field-invalid {
+      @apply border-red-600;
+    }
+    &:focus-within {
+      @apply border-zinc-900;
+    }
+  }
+  .text-editor.text-editor-readonly {
+    @apply bg-zinc-100;
+  }
+  .text-editor-toolbar {
+    @apply sticky top-0 z-10 flex flex-wrap items-center gap-0.5 rounded-t-md border-b border-zinc-300 bg-white p-1;
+  }
+  .text-editor-divider {
+    @apply mx-1 h-5 w-px bg-zinc-300;
+  }
+  .text-editor-tool {
+    @apply flex h-8 min-w-8 cursor-pointer items-center justify-center rounded px-1.5 text-sm text-zinc-900 hover:bg-zinc-100 focus-visible:outline-2 focus-visible:outline-zinc-900;
+    & > svg {
+      @apply h-4 w-4;
+    }
+  }
+  .text-editor-bold {
+    @apply font-bold;
+  }
+  .text-editor-italic {
+    @apply font-serif italic;
+  }
+  .text-editor-underline {
+    @apply underline underline-offset-2;
+  }
+  .text-editor-heading {
+    @apply text-xs font-semibold;
+  }
+  .text-editor-insert {
+    @apply relative ml-auto;
+  }
+  .text-editor-tool.text-editor-insert-trigger {
+    @apply gap-1.5 px-2;
+  }
+  .text-editor-tool > .text-editor-chevron {
+    @apply h-3.5 w-3.5;
+  }
+  .text-editor-insert-label {
+    @apply @max-md:sr-only;
+  }
+  .text-editor-menu {
+    @apply absolute top-full right-0 z-20 mt-1 max-h-80 w-64 flex-col overflow-x-hidden overflow-y-auto rounded-xl bg-white py-1 text-zinc-900 shadow-xl ring-1 ring-zinc-300;
+    scrollbar-width: thin;
+    &:not([hidden]) {
+      display: flex;
+    }
+  }
+  .text-editor-menu-item {
+    @apply flex cursor-pointer flex-col items-start px-3 py-1.5 text-left hover:bg-zinc-100 focus:bg-zinc-100 focus:outline-none;
+  }
+  .text-editor-menu-label {
+    @apply text-sm;
+  }
+  .text-editor-menu-code {
+    @apply font-mono text-xs text-zinc-500;
+  }
+  .text-editor-status {
+    @apply text-right text-xs text-zinc-500;
+  }
+  .text-editor-source {
+    & .cm-editor {
+      @apply rounded-b-md text-base text-zinc-900;
+    }
+    & .cm-md-marker,
+    & .cm-md-bullet {
+      @apply text-zinc-500;
+    }
+    & .cm-md-bullet {
+      @apply pr-0.5;
+    }
+    & .cm-md-heading {
+      @apply font-semibold text-zinc-900;
+    }
+    & .cm-line.cm-md-h1 {
+      font-size: 1.5em;
+      line-height: 1.4;
+    }
+    & .cm-line.cm-md-h2 {
+      font-size: 1.25em;
+      line-height: 1.4;
+    }
+    & .cm-line.cm-md-h3 {
+      font-size: 1.125em;
+    }
+    & .cm-md-bold {
+      @apply font-semibold;
+    }
+    & .cm-md-italic {
+      @apply italic;
+    }
+    & .cm-md-underline {
+      @apply underline underline-offset-2;
+    }
+    & .cm-md-strike {
+      @apply line-through;
+    }
+    & .cm-md-link {
+      @apply text-sky-800 underline underline-offset-2;
+    }
+    & .cm-md-code {
+      @apply rounded bg-zinc-100 px-1 font-mono text-[0.875em] text-rose-800;
+    }
+    & .cm-line.cm-md-codeblock {
+      @apply bg-zinc-100 font-mono text-[0.875em];
+    }
+    & .cm-line.cm-md-quote {
+      @apply border-l-4 border-zinc-300 text-zinc-500;
+      --tw-line-indent: 0.75rem;
+    }
+    & .cm-md-var {
+      @apply rounded bg-zinc-100 px-1 font-mono text-[0.875em] text-zinc-700 ring-1 ring-zinc-300 ring-inset;
+    }
+  }
+}

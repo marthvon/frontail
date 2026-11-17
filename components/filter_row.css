@@ -1,0 +1,68 @@
+@layer components {
+  .filter-row {
+    position: relative;
+    container-type: inline-size;
+  }
+  .filter-switch {
+    @apply pointer-events-none absolute opacity-0;
+  }
+  /* clip, not hidden: focusing a clipped control must not scroll the row. Dropdown menus escape the clip only because they are positioned against .filter-row, so nothing between the two may be positioned. */
+  .filter-flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--filter-gap);
+    margin: calc(var(--filter-pad) * -1);
+    padding: var(--filter-pad);
+    max-height: calc(var(--filter-line) + var(--filter-pad) * 2);
+    overflow: clip;
+    transition: max-height 300ms ease-in-out;
+  }
+  .filter-switch:checked ~ .filter-flow {
+    max-height: var(--filter-open);
+  }
+  /* Keeps --filter-aside free beside the toggles on the first line: each clamp() is 0 or --filter-aside, and min() keeps it only when this slot fits there and the next one does not. */
+  .filter-slot {
+    flex: var(--filter-grow, 1) var(--filter-grow, 1) var(--filter-width);
+    min-width: min(var(--filter-min), 100%);
+    max-width: 100%;
+    margin-inline-end: min(
+      clamp(0rem, (100% - var(--filter-end) - var(--filter-aside)) * 1000, var(--filter-aside)),
+      clamp(0rem, (var(--filter-next) + var(--filter-aside) - 100%) * 1000, var(--filter-aside))
+    );
+  }
+  .filter-flow :has(> .dropdown-wrapper) {
+    @apply justify-end;
+  }
+  .filter-flow .dropdown-wrapper {
+    position: absolute;
+  }
+  .filter-toggle {
+    position: absolute;
+    top: var(--filter-label);
+    right: var(--filter-toggle);
+  }
+  .filter-toggle.filter-applied {
+    @apply border-zinc-900;
+  }
+  .filter-switch:checked ~ .filter-toggle {
+    @apply bg-zinc-100;
+  }
+  .filter-switch:focus-visible ~ .filter-toggle {
+    @apply ring-2;
+  }
+  .filter-refresh {
+    position: absolute;
+    top: var(--filter-label);
+    right: 0;
+    &[aria-busy="true"] > svg {
+      @apply animate-spin;
+    }
+  }
+  .filter-clear {
+    position: absolute;
+    top: var(--filter-label);
+    right: var(--filter-clear);
+    width: var(--filter-clear-width, 4rem);
+  }
+}
