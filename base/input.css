@@ -17,7 +17,7 @@
     appearance:textfield; /* Firefox */
   }
   input[type="text"], input[type="number"], input[type="numeric"], input[type="decimal"],
-  input[type="search"], input[type="email"], input[type="tel"], input[type="url"], textarea {
+  input[type="search"], input[type="email"], input[type="tel"], input[type="url"], input[type="password"], textarea {
     text-overflow: ellipsis;
     overflow: hidden;
     resize: none;

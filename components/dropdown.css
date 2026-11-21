@@ -6,7 +6,8 @@
     @apply flex flex-col rounded-xl bg-white drop-shadow-xl h-fit;
   }
   .dropdown-wrapper {
-    @apply flex transition-all duration-300 z-10 opacity-0;
+    @apply flex transition-all duration-300 opacity-0;
+    z-index: var(--z-popover, 50);
   }
 }
 @utility dropdown-hover-top {

@@ -6,7 +6,7 @@
     }
   }
   .textbox-a0 {
-    @apply border-b-2 p-2 bg-zinc-100 rounded-b-none rounded-t-md;
+    @apply border-b-2 p-2 bg-zinc-100 rounded-b-none rounded-t-md outline-none;
     &:focus {
       @apply border-b-2 rounded-b-none;
     }

@@ -5,6 +5,7 @@
 @utility modal-background {
   background-color: var(--tw-modal-tint, rgb(0 0 0 / 0.5));
   position: fixed;
+  z-index: var(--z-backdrop, 40);
   top: 0px;
   left: 0px;
   cursor: pointer;

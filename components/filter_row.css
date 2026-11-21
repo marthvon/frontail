@@ -2,6 +2,15 @@
   .filter-row {
     position: relative;
     container-type: inline-size;
+    --filter-tools: var(--filter-tools-more);
+    --filter-aside: calc(var(--filter-tools) + var(--filter-clear-space));
+  }
+  .filter-row[data-fits] {
+    --filter-tools: var(--filter-tools-fit);
+    & > .filter-switch,
+    & > .filter-toggle {
+      display: none;
+    }
   }
   .filter-switch {
     @apply pointer-events-none absolute opacity-0;
@@ -40,7 +49,7 @@
   .filter-toggle {
     position: absolute;
     top: var(--filter-label);
-    right: var(--filter-toggle);
+    right: var(--filter-tools-fit);
   }
   .filter-toggle.filter-applied {
     @apply border-zinc-900;
@@ -62,7 +71,7 @@
   .filter-clear {
     position: absolute;
     top: var(--filter-label);
-    right: var(--filter-clear);
+    right: var(--filter-tools);
     width: var(--filter-clear-width, 4rem);
   }
 }

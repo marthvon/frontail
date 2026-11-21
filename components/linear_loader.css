@@ -1,14 +1,16 @@
-@theme {
-  @keyframes linear_loader {
-    100% {background-size:100%}
-  }
+@keyframes linear_loader {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
 }
 @layer components {
-  .linear-loader {
-    background: linear-gradient(var(--tw-gradient-from) 0 0) 0/0% no-repeat var(--tw-gradient-to);
-    animation: linear_loader var(--tw-animation-duration) infinite linear;
-  }
   .linear-loader-base {
-    @apply rounded w-24 h-5;
+    @apply block w-24 h-5 overflow-hidden rounded;
+  }
+  .linear-loader-fill {
+    @apply block h-full w-full origin-left;
+    transform: scaleX(0);
+  }
+  .linear-loader[data-running] > .linear-loader-fill {
+    animation: linear_loader var(--loader-duration, 5s) linear forwards;
   }
 }

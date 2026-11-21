@@ -1,0 +1,44 @@
+@layer components {
+  .tooltip {
+    @apply relative inline-flex;
+    --tooltip-shift: 0.375rem;
+  }
+  .tooltip-wrapper {
+    @apply pointer-events-none absolute w-max max-w-64;
+  }
+  .tooltip-outer {
+    @apply p-1.5 duration-200;
+  }
+  .tooltip-modal {
+    @apply rounded-md bg-zinc-900 px-2 py-1 text-xs leading-snug text-white drop-shadow-md;
+  }
+  .tooltip-top > .tooltip-wrapper {
+    bottom: 100%; left: 50%; translate: -50% 0;
+    & > .tooltip-outer { transform: translateY(var(--tooltip-shift)); }
+  }
+  .tooltip-bottom > .tooltip-wrapper {
+    top: 100%; left: 50%; translate: -50% 0;
+    & > .tooltip-outer { transform: translateY(calc(-1 * var(--tooltip-shift))); }
+  }
+  .tooltip-left > .tooltip-wrapper {
+    right: 100%; top: 50%; translate: 0 -50%;
+    & > .tooltip-outer { transform: translateX(var(--tooltip-shift)); }
+  }
+  .tooltip-right > .tooltip-wrapper {
+    left: 100%; top: 50%; translate: 0 -50%;
+    & > .tooltip-outer { transform: translateX(calc(-1 * var(--tooltip-shift))); }
+  }
+  .tooltip:is(:focus-within, [data-open]) > .tooltip-wrapper {
+    opacity: 1;
+    & > .tooltip-outer { transform: none; }
+  }
+  @media (hover: hover) {
+    .tooltip:hover > .tooltip-wrapper {
+      opacity: 1;
+      & > .tooltip-outer { transform: none; }
+    }
+  }
+  .tooltip[data-interactive]:is(:hover, :focus-within, [data-open]) > .tooltip-wrapper {
+    pointer-events: auto;
+  }
+}

@@ -11,6 +11,7 @@
     @apply -translate-1/2 text-4xl group-active:scale-150 transition-all;
   }
   .-carousel-arrows {
-    @apply min-w-16 h-full cursor-pointer z-10;
+    @apply min-w-16 h-full cursor-pointer;
+    z-index: var(--z-raised, 1);
   }
 }

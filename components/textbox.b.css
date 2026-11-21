@@ -1,0 +1,38 @@
+@layer components {
+  .textbox-b {
+    @apply flex flex-col gap-1 bg-white pt-2 text-zinc-900;
+  }
+  .textbox-b-frame {
+    @apply relative bg-inherit;
+  }
+  .textbox-b-box {
+    @apply block w-full rounded-xl border-2 border-zinc-300 bg-inherit px-3.5 text-base outline-none transition-colors duration-200 placeholder:text-zinc-400 focus:border-zinc-500;
+    &:is(textarea) {
+      @apply resize-none py-3;
+    }
+    &[aria-invalid="true"] {
+      @apply border-red-600;
+    }
+  }
+  .textbox-b-label {
+    @apply pointer-events-none absolute left-2.5 top-0 max-w-[calc(100%-1.25rem)] -translate-y-1/2 truncate bg-inherit px-1 text-sm leading-4 font-semibold text-zinc-500 transition-colors duration-200;
+    &:is(:where(.textbox-b-box):focus ~ *) {
+      @apply text-zinc-700;
+    }
+    &:is(:where(.textbox-b-box)[aria-invalid="true"] ~ *) {
+      @apply text-red-600;
+    }
+  }
+  .textbox-b-float {
+    transition-property: top, font-size, line-height, color;
+    &:is(:where(.textbox-b-box):placeholder-shown:not(:focus) ~ *) {
+      @apply top-1/2 text-base font-normal text-zinc-400;
+    }
+    &:is(:where(textarea.textbox-b-box):placeholder-shown:not(:focus) ~ *) {
+      @apply top-6;
+    }
+  }
+  .textbox-b-message {
+    @apply min-h-4 px-3.5 text-xs leading-4 text-red-600;
+  }
+}

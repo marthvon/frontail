@@ -12,6 +12,12 @@
   .select-value {
     @apply min-w-0 truncate;
   }
+  .select-chevron {
+    @apply ml-auto flex shrink-0 text-zinc-500 transition-transform duration-200 motion-reduce:transition-none;
+    &:is(:where(.peer):checked ~ * *) {
+      @apply rotate-180;
+    }
+  }
   .dropdown-outer-modal.select-outer {
     @apply p-0;
   }

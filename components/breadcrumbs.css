@@ -1,0 +1,23 @@
+@layer components {
+  .breadcrumbs {
+    @apply text-sm;
+  }
+  .breadcrumbs-list {
+    @apply flex flex-wrap items-center gap-2;
+  }
+  .breadcrumbs-item {
+    @apply flex items-center;
+  }
+  .breadcrumbs-separator {
+    @apply flex items-center text-zinc-300;
+  }
+  .breadcrumbs-link {
+    @apply inline-flex items-center rounded text-zinc-500 hover:text-zinc-900;
+  }
+  .breadcrumbs-current {
+    @apply inline-flex items-center font-medium text-zinc-900;
+  }
+  .breadcrumbs-home {
+    @apply block h-5 w-5;
+  }
+}

@@ -1,0 +1,54 @@
+@layer components {
+  .file-viewer {
+    @apply relative h-full min-h-48 w-full min-w-0 overflow-hidden bg-neutral-950;
+  }
+  .file-viewer-media {
+    @apply absolute inset-0 h-full w-full object-contain;
+  }
+  .file-viewer-poster {
+    @apply absolute inset-0 h-full w-full object-contain opacity-70 blur-md;
+  }
+  .file-viewer-video {
+    @apply bg-black;
+  }
+  .file-viewer-frame {
+    @apply absolute inset-0 h-full w-full border-0 bg-white;
+  }
+  .file-viewer-text {
+    @apply absolute inset-0 overflow-auto bg-white p-4 font-mono text-xs whitespace-pre-wrap text-zinc-900;
+    overflow-wrap: break-word;
+  }
+  .file-viewer-fallback {
+    @apply absolute inset-0 flex flex-col items-center justify-center gap-3 bg-zinc-100 p-6 text-center;
+  }
+  .file-viewer-badge {
+    @apply rounded bg-zinc-900 px-3 py-1 text-sm font-semibold tracking-wide text-white;
+  }
+  .file-viewer-title {
+    @apply max-w-md text-base font-medium break-words text-zinc-900;
+  }
+  .file-viewer-note {
+    @apply max-w-md text-sm break-words text-zinc-500;
+  }
+  .file-viewer-status {
+    @apply absolute top-3 left-1/2 -translate-x-1/2 rounded-full bg-black/60 px-3 py-1 text-xs text-white;
+  }
+  .file-viewer-notice {
+    @apply absolute inset-x-4 top-4 rounded-md bg-black/70 px-3 py-2 text-center text-sm text-white;
+  }
+  .file-viewer-error {
+    @apply absolute inset-x-4 top-4 rounded-md bg-red-50 px-3 py-2 text-center text-sm text-red-700;
+  }
+  .file-viewer-nav {
+    @apply absolute top-1/2 -translate-y-1/2 cursor-pointer rounded-full bg-black/50 p-2 text-white hover:bg-black/70;
+    & > svg {
+      @apply block h-5 w-5;
+    }
+    &[data-side="prev"] {
+      @apply left-2;
+    }
+    &[data-side="next"] {
+      @apply right-2;
+    }
+  }
+}

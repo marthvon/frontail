@@ -1,0 +1,5 @@
+@layer components {
+  .qr-code {
+    @apply h-48 w-48 rounded-md border border-zinc-300 bg-white text-black;
+  }
+}

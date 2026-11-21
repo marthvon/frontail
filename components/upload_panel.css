@@ -1,0 +1,69 @@
+@layer components {
+  .upload-panel {
+    @apply flex min-h-0 flex-col gap-4 rounded-xl border border-zinc-300 bg-white p-4;
+  }
+  .upload-drop {
+    @apply flex cursor-pointer flex-col items-center gap-1 rounded-xl border-2 border-dashed border-zinc-300 bg-zinc-50 px-4 py-10 text-center text-sm transition-colors hover:border-zinc-400;
+    &.upload-dragging {
+      @apply border-zinc-900 bg-zinc-100;
+    }
+  }
+  .upload-drop-title {
+    @apply font-medium text-zinc-800;
+  }
+  .upload-drop-hint {
+    @apply text-zinc-500;
+  }
+  .upload-input {
+    @apply sr-only;
+  }
+  .upload-header {
+    @apply flex flex-wrap items-center justify-between gap-2;
+  }
+  .upload-heading {
+    @apply text-sm font-medium text-zinc-500;
+  }
+  .upload-clear {
+    @apply cursor-pointer rounded-md border border-zinc-300 px-3 py-1 text-sm hover:bg-zinc-100;
+  }
+  .upload-list {
+    @apply -mr-2 flex min-h-0 flex-col gap-2 overflow-x-hidden overflow-y-auto pr-2;
+    scrollbar-width: none;
+  }
+  .upload-item {
+    @apply flex flex-col gap-1.5 rounded-md border border-zinc-300 px-3 py-2;
+  }
+  .upload-row {
+    @apply flex items-baseline gap-3 text-sm;
+  }
+  .upload-name {
+    @apply min-w-0 flex-1 truncate font-medium text-zinc-900;
+  }
+  .upload-status {
+    @apply shrink-0 text-xs text-zinc-500;
+  }
+  .upload-bar {
+    @apply h-1.5 w-full overflow-hidden rounded bg-zinc-200;
+  }
+  .upload-fill {
+    @apply h-full bg-zinc-900 transition-all;
+    &[data-state="failed"] {
+      @apply bg-red-600;
+    }
+    &[data-state="duplicate"] {
+      @apply bg-zinc-400;
+    }
+  }
+  .upload-note {
+    @apply min-w-0 break-words text-xs text-zinc-500;
+  }
+  .upload-error {
+    @apply flex flex-wrap items-center justify-between gap-2 text-xs text-red-700;
+  }
+  .upload-error-text {
+    @apply min-w-0 break-words;
+  }
+  .upload-retry {
+    @apply cursor-pointer rounded-md border border-red-200 px-2 py-0.5;
+  }
+}

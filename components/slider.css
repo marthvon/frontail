@@ -14,6 +14,9 @@
   .slider-thumb {
     @apply w-6 h-fit aspect-square bg-black border-white border-2 rounded-full cursor-pointer transition-all;
   }
+  .slider-label-out {
+    @apply box-content shrink-0 overflow-hidden p-2 whitespace-nowrap tabular-nums;
+  }
   .slider-label-in {
     @apply bg-white w-4/5 h-4/5 text-xs text-center;
     border-radius: inherit;
